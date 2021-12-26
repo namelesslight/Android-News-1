@@ -40,8 +40,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 Category.DataDTO.ResultDTO category = categoryList.get(position);
-                Toast.makeText(v.getContext(),
-                        "you clicked view " + category.getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext,NewsCategoryActivity.class);
                 intent.putExtra("id",category.getId());
                 intent.putExtra("message","listNewsByCategory");

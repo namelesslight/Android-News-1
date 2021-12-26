@@ -53,8 +53,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 News.DataDTO.ResultDTO newsData = newsDataList.get(position);
-                Toast.makeText(v.getContext(), "you clicked view " +
-                        newsData.getContent(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, SigelActivity.class);
                 intent.putExtra("title",newsData.getTitle());
                 intent.putExtra("content",newsData.getContent());
@@ -66,8 +64,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 News.DataDTO.ResultDTO newsData = newsDataList.get(position);
-                Toast.makeText(v.getContext(), "you clicked image " +
-                        newsData.getContent(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, SigelActivity.class);
                 intent.putExtra("title",newsData.getTitle());
                 intent.putExtra("content",newsData.getContent());
@@ -82,9 +78,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(NewsAdapter.ViewHolder holder, int position) {
         News.DataDTO.ResultDTO newsData = newsDataList.get(position);
-        String ip = "http://www.namelesshome.com/";
         String path = newsData.getFilePath();
-        new MyTask(holder.newsImage).execute(ip+path);
+        new MyTask(holder.newsImage).execute(path);
 
         holder.newsTitle.setText(newsData.getContent());
     }

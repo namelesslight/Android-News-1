@@ -8,21 +8,15 @@
     tools:context=".activity.SigelActivity">
 
     <TextView
+        android:id="@+id/singleTitle"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:textSize="22sp"
         android:text="世界新闻"
         android:gravity="center"
         android:background="#D33F51B5"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
-    <TextView
-        android:id="@+id/singleTitle"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:text="和人民在一起·2021丨大地初心"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
